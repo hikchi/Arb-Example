@@ -27,7 +27,7 @@ interface IUniswapV2Pair {
 	function swap(uint256 amount0Out,	uint256 amount1Out,	address to,	bytes calldata data) external;
 }
 
-contract Arb is Ownable(msg.sender) {
+contract Arb is Ownable {
 
 	function swap(address router, address _tokenIn, address _tokenOut, uint256 _amount) private {
 		IERC20(_tokenIn).approve(router, _amount);
@@ -39,7 +39,7 @@ contract Arb is Ownable(msg.sender) {
 		IUniswapV2Router(router).swapExactTokensForTokens(_amount, 1, path, address(this), deadline);
 	}
 
-		function getAmountOutMin(address router, address _tokenIn, address _tokenOut, uint256 _amount) public view returns (uint256) {
+	function getAmountOutMin(address router, address _tokenIn, address _tokenOut, uint256 _amount) public view returns (uint256) {
 		address[] memory path;
 		path = new address[](2);
 		path[0] = _tokenIn;

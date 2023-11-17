@@ -27,7 +27,7 @@ interface IUniswapV2Pair {
   function swap(uint256 amount0Out,	uint256 amount1Out,	address to,	bytes calldata data) external;
 }
 
-contract InstaArb is Ownable(msg.sender) {
+contract InstaArb is Ownable {
 
   address [] public routers;
   address [] public tokens;
