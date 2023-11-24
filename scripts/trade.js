@@ -4,13 +4,14 @@ require("dotenv").config();
 
 let config, arb, owner, inTrade, balances;
 const network = hre.network.name;
-if (network === 'aurora') config = require('./../config/aurora.json');
-if (network === 'fantom') config = require('./../config/fantom.json');
+config = require(`./../config/${network}.json`);
 
 console.log(`Loaded ${config.routes.length} routes`);
 console.log(`Loaded ${config.baseAssets.length} baseAssets`);
 console.log(`Loaded ${config.tokens.length} tokens`);
 console.log(`Loaded ${config.routers.length} routers`);
+
+const DEFAULT_DIV_SIZE = 1
 
 const main = async () => {
   console.log("start setup.... block at", await hre.ethers.provider.getBlockNumber())
@@ -53,7 +54,7 @@ const lookForDualTrade = async () => {
     targetRoute = searchForRoutes();
   }
   try {
-    let tradeSize = balances[targetRoute.token1].balance.div(2);
+    let tradeSize = balances[targetRoute.token1].balance.div(DEFAULT_DIV_SIZE);
     console.log('stare calling at', new Date(), { tradeSize, targetRoute });
     const amtBack = await arb.estimateDualDexTrade(targetRoute.router1, targetRoute.router2, targetRoute.token1, targetRoute.token2, tradeSize);
     const multiplier = hre.ethers.BigNumber.from(config.minBasisPointsPerTrade + 10000);

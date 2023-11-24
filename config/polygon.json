@@ -1,0 +1,740 @@
+{
+  "arbContract": "0xfa2c879Fd4BDd27Afe7be211e9912674914AB949",
+  "minBasisPointsPerTrade": 50,
+  "routers": [
+    { "dex": "quickswap", "address": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff" }, 
+    { "dex": "Dfyn Network", "address": "0xA102072A4C07F06EC3B4900FDC4C7B80b6c57429" }, 
+    { "dex": "sushi", "address": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506" }, 
+    { "dex": "meshswap", "address": "0x10f4A785F458Bc144e3706575924889954946639" },
+    { "dex": "fraxswap", "address": "0xE52D0337904D4D0519EF7487e707268E1DB6495F" }
+  ],
+  "baseAssets": [
+    { "sym": "weth","address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619" },
+    { "sym": "wmatic", "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270" },
+    { "sym": "usdt", "address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" },
+    { "sym": "usdc", "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174" }
+  ],
+  "tokens": [
+    {
+      "sym": "WMATIC",
+      "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270"
+    },
+    {
+      "sym": "DAI",
+      "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063"
+    },
+    {
+      "sym": "USDT",
+      "address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+    },
+    {
+      "sym": "USDC.e",
+      "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+    },
+    {
+      "sym": "QUICK(OLD)",
+      "address": "0x831753DD7087CaC61aB5644b308642cc1c33Dc13"
+    },
+    {
+      "sym": "QUICK(NEW)",
+      "address": "0xB5C064F955D8e7F38fE0460C556a72987494eE17"
+    },
+    {
+      "sym": "UNI",
+      "address": "0xb33EaAd8d922B1083446DC23f610c2567fB5180f"
+    },
+    {
+      "sym": "OM",
+      "address": "0xC3Ec80343D2bae2F8E680FDADDe7C17E71E114ea"
+    },
+    {
+      "sym": "DG",
+      "address": "0xef938b6da8576a896f6E0321ef80996F4890f9c4"
+    },
+    {
+      "sym": "GHST",
+      "address": "0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7"
+    },
+    {
+      "sym": "WBTC",
+      "address": "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6"
+    },
+    {
+      "sym": "LINK",
+      "address": "0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39"
+    },
+    {
+      "sym": "MANA",
+      "address": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4"
+    },
+    {
+      "sym": "ETH",
+      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+    },
+    {
+      "sym": "HEX",
+      "address": "0x23D29D30e35C5e8D321e1dc9A8a61BFD846D4C5C"
+    },
+    {
+      "sym": "MONA",
+      "address": "0x6968105460f67c3BF751bE7C15f92F5286Fd0CE5"
+    },
+    {
+      "sym": "mOCEAN",
+      "address": "0x282d8efCe846A88B159800bd4130ad77443Fa1A1"
+    },
+    {
+      "sym": "TEL",
+      "address": "0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32"
+    },
+    {
+      "sym": "AAVE",
+      "address": "0xD6DF932A45C0f255f85145f286eA0b292B21C90B"
+    },
+    {
+      "sym": "PLOT",
+      "address": "0xe82808eaA78339b06a691fd92E1Be79671cAd8D3"
+    },
+    {
+      "sym": "QI",
+      "address": "0x580A84C73811E1839F75d86d75d88cCa0c241fF4"
+    },
+    {
+      "sym": "MAI",
+      "address": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1"
+    },
+    {
+      "sym": "PolyDoge",
+      "address": "0x8A953CfE442c5E8855cc6c61b1293FA648BAE472"
+    },
+    {
+      "sym": "ADDY",
+      "address": "0xc3FdbadC7c795EF1D6Ba111e06fF8F16A20Ea539"
+    },
+    {
+      "sym": "ERN",
+      "address": "0x0E50BEA95Fe001A370A4F1C220C49AEdCB982DeC"
+    },
+    {
+      "sym": "WOO",
+      "address": "0x1B815d120B3eF02039Ee11dC2d33DE7aA4a8C603"
+    },
+    {
+      "sym": "COMBO",
+      "address": "0x6DdB31002abC64e1479Fc439692F7eA061e78165"
+    },
+    {
+      "sym": "NEXO",
+      "address": "0x41b3966B4FF7b427969ddf5da3627d6AEAE9a48E"
+    },
+    {
+      "sym": "SOL",
+      "address": "0x7DfF46370e9eA5f0Bad3C4E29711aD50062EA7A4"
+    },
+    {
+      "sym": "PYR",
+      "address": "0x430EF9263E76DAE63c84292C3409D61c598E9682"
+    },
+    {
+      "sym": "OMEN",
+      "address": "0x76e63a3E7Ba1e2E61D3DA86a87479f983dE89a7E"
+    },
+    {
+      "sym": "AVAX",
+      "address": "0x2C89bbc92BD86F8075d1DEcc58C7F4E0107f286b"
+    },
+    {
+      "sym": "ADS",
+      "address": "0x598e49f01bEfeB1753737934a5b11fea9119C796"
+    },
+    {
+      "sym": "CIOTX",
+      "address": "0x300211Def2a644b036A9bdd3e58159bb2074d388"
+    },
+    {
+      "sym": "REVV",
+      "address": "0x70c006878a5A50Ed185ac4C87d837633923De296"
+    },
+    {
+      "sym": "XCAD",
+      "address": "0xA55870278d6389ec5B524553D03C04F5677c061E"
+    },
+    {
+      "sym": "MOONED",
+      "address": "0x7E4c577ca35913af564ee2a24d882a4946Ec492B"
+    },
+    {
+      "sym": "ANRX",
+      "address": "0x554f074d9cCda8F483d1812d4874cBebD682644E"
+    },
+    {
+      "sym": "MASK",
+      "address": "0x2B9E7ccDF0F4e5B24757c1E1a80e311E34Cb10c7"
+    },
+    {
+      "sym": "KOM",
+      "address": "0xC004e2318722EA2b15499D6375905d75Ee5390B8"
+    },
+    {
+      "sym": "ORBS",
+      "address": "0x614389EaAE0A6821DC49062D56BDA3d9d45Fa2ff"
+    },
+    {
+      "sym": "BNB",
+      "address": "0x5c4b7CCBF908E64F32e12c6650ec0C96d717f03F"
+    },
+    {
+      "sym": "ETHA",
+      "address": "0x59E9261255644c411AfDd00bD89162d09D862e38"
+    },
+    {
+      "sym": "TECH",
+      "address": "0x6286A9e6f7e745A6D884561D88F94542d6715698"
+    },
+    {
+      "sym": "GMEE",
+      "address": "0xcf32822ff397Ef82425153a9dcb726E5fF61DCA7"
+    },
+    {
+      "sym": "NSDX",
+      "address": "0xE8d17b127BA8b9899a160D9a07b69bCa8E08bfc6"
+    },
+    {
+      "sym": "ATOM",
+      "address": "0xac51C4c48Dc3116487eD4BC16542e27B5694Da1b"
+    },
+    {
+      "sym": "KNIGHT",
+      "address": "0x4455eF8B4B4A007a93DaA12DE63a47EEAC700D9D"
+    },
+    {
+      "sym": "BLOK",
+      "address": "0x229b1b6C23ff8953D663C4cBB519717e323a0a84"
+    },
+    {
+      "sym": "UCO",
+      "address": "0x3C720206bFaCB2d16fA3ac0ed87D2048Dbc401Fc"
+    },
+    {
+      "sym": "DPI",
+      "address": "0x85955046DF4668e1DD369D2DE9f3AEB98DD2A369"
+    },
+    {
+      "sym": "FTM",
+      "address": "0xB85517b87BF64942adf3A0B9E4c71E4Bc5Caa4e5"
+    },
+    {
+      "sym": "ELON",
+      "address": "0xE0339c80fFDE91F3e20494Df88d4206D86024cdF"
+    },
+    {
+      "sym": "SHIB",
+      "address": "0x6f8a06447Ff6FcF75d803135a7de15CE88C1d4ec"
+    },
+    {
+      "sym": "SNE",
+      "address": "0x32934CB16DA43fd661116468c1B225Fc26CF9A8c"
+    },
+    {
+      "sym": "ICE",
+      "address": "0xc6C855AD634dCDAd23e64DA71Ba85b8C51E5aD7c"
+    },
+    {
+      "sym": "GNS",
+      "address": "0xE5417Af564e4bFDA1c483642db72007871397896"
+    },
+    {
+      "sym": "DERC",
+      "address": "0xB35fcBCF1fD489fCe02Ee146599e893FDCdC60e6"
+    },
+    {
+      "sym": "FLAME",
+      "address": "0x22e3f02f86Bc8eA0D73718A2AE8851854e62adc5"
+    },
+    {
+      "sym": "GAMER",
+      "address": "0x3f6b3595ecF70735D3f48D69b09C4E4506DB3F47"
+    },
+    {
+      "sym": "UM",
+      "address": "0x3B1A0c9252ee7403093fF55b4a5886d49a3d837a"
+    },
+    {
+      "sym": "JPYC",
+      "address": "0x6AE7Dfc73E0dDE2aa99ac063DcF7e8A63265108c"
+    },
+    {
+      "sym": "CHAMP",
+      "address": "0x8f9E8e833A69Aa467E42c46cCA640da84DD4585f"
+    },
+    {
+      "sym": "WELT",
+      "address": "0x23E8B6A3f6891254988B84Da3738D2bfe5E703b9"
+    },
+    {
+      "sym": "MASQ",
+      "address": "0xEe9A352F6aAc4aF1A5B9f467F6a93E0ffBe9Dd35"
+    },
+    {
+      "sym": "GAIA",
+      "address": "0x723B17718289A91AF252D616DE2C77944962d122"
+    },
+    {
+      "sym": "SAND",
+      "address": "0xBbba073C31bF03b8ACf7c28EF0738DeCF3695683"
+    },
+    {
+      "sym": "ORARE",
+      "address": "0xFF2382Bd52efaceF02Cc895bcBFc4618608AA56F"
+    },
+    {
+      "sym": "MOCA",
+      "address": "0xcE899f26928a2B21c6a2Fddd393EF37c61dbA918"
+    },
+    {
+      "sym": "BLANK",
+      "address": "0xf4C83080E80AE530d6f8180572cBbf1Ac9D5d435"
+    },
+    {
+      "sym": "agEUR",
+      "address": "0xE0B52e49357Fd4DAf2c15e02058DCE6BC0057db4"
+    },
+    {
+      "sym": "MYST",
+      "address": "0x1379E8886A944d2D9d440b3d88DF536Aea08d9F3"
+    },
+    {
+      "sym": "EGG",
+      "address": "0x51dE72b17c7bD12E9E6d69eb506a669EB6b5249E"
+    },
+    {
+      "sym": "mSHEESHA",
+      "address": "0x88C949b4eB85a90071f2C0beF861BDDEe1a7479D"
+    },
+    {
+      "sym": "PSP",
+      "address": "0x42d61D766B85431666B39B89C43011f24451bFf6"
+    },
+    {
+      "sym": "MCO2",
+      "address": "0xAa7DbD1598251f856C12f63557A4C4397c253Cea"
+    },
+    {
+      "sym": "SAFLE",
+      "address": "0x04b33078Ea1aEf29bf3fB29c6aB7B200C58ea126"
+    },
+    {
+      "sym": "MCHC",
+      "address": "0xee7666aACAEFaa6efeeF62ea40176d3eB21953B9"
+    },
+    {
+      "sym": "BOOK",
+      "address": "0x8192759Bf7f247cC92F74E39B3A4225516624fC1"
+    },
+    {
+      "sym": "VOXEL",
+      "address": "0xd0258a3fD00f38aa8090dfee343f10A9D4d30D3F"
+    },
+    {
+      "sym": "GM",
+      "address": "0xE40d881Cf66e1F6D19979A5fF6c830C6Af65D278"
+    },
+    {
+      "sym": "REQ",
+      "address": "0xB25e20De2F2eBb4CfFD4D16a55C7B395e8a94762"
+    },
+    {
+      "sym": "KLIMA",
+      "address": "0x4e78011Ce80ee02d2c3e649Fb657E45898257815"
+    },
+    {
+      "sym": "4INT",
+      "address": "0x5CEeBB0947d58Fabde2fc026Ffe4B33ccFE1bA8B"
+    },
+    {
+      "sym": "BICO",
+      "address": "0x91c89A94567980f0e9723b487b0beD586eE96aa7"
+    },
+    {
+      "sym": "MV",
+      "address": "0xA3c322Ad15218fBFAEd26bA7f616249f7705D945"
+    },
+    {
+      "sym": "MILK",
+      "address": "0x1599fE55Cda767b1F631ee7D414b41F5d6dE393d"
+    },
+    {
+      "sym": "TRACE",
+      "address": "0x4287F07CBE6954f9F0DecD91d0705C926d8d03A4"
+    },
+    {
+      "sym": "TOWER",
+      "address": "0x2bC07124D8dAc638E290f401046Ad584546BC47b"
+    },
+    {
+      "sym": "COT",
+      "address": "0x8d520c8E66091cfD6743fe37Fbe3A09505616C4b"
+    },
+    {
+      "sym": "XGEM",
+      "address": "0x02649C1Ff4296038De4b9bA8F491b42b940A8252"
+    },
+    {
+      "sym": "FNC",
+      "address": "0x7f280daC515121DcdA3EaC69eB4C13a52392CACE"
+    },
+    {
+      "sym": "FUSE",
+      "address": "0x6b021b3f68491974bE6D4009fEe61a4e3C708fD6"
+    },
+    {
+      "sym": "IXT",
+      "address": "0xE06Bd4F5aAc8D0aA337D13eC88dB6defC6eAEefE"
+    },
+    {
+      "sym": "BANANA",
+      "address": "0xbC91347e80886453F3f8bBd6d7aC07C122D87735"
+    },
+    {
+      "sym": "NITRO",
+      "address": "0x695FC8B80F344411F34bDbCb4E621aA69AdA384b"
+    },
+    {
+      "sym": "stMATIC",
+      "address": "0x3A58a54C066FdC0f2D55FC9C89F0415C92eBf3C4"
+    },
+    {
+      "sym": "NEAR",
+      "address": "0x72bd80445b0db58ebe3E8dB056529D4C5FAF6F2f"
+    },
+    {
+      "sym": "QUIDD",
+      "address": "0x123706cDD8e60324e610E9A2CC7012D0F45A5b8E"
+    },
+    {
+      "sym": "LDO",
+      "address": "0xC3C7d422809852031b44ab29EEC9F1EfF2A58756"
+    },
+    {
+      "sym": "SD",
+      "address": "0x1d734A02eF1e1f5886e66b0673b71Af5B53ffA94"
+    },
+    {
+      "sym": "MaticX",
+      "address": "0xfa68FB4628DFF1028CFEc22b4162FCcd0d45efb6"
+    },
+    {
+      "sym": "GOO",
+      "address": "0x6F3Cc27E17a0f2e52D8e7693FF0d892Cea1854bF"
+    },
+    {
+      "sym": "NSFW",
+      "address": "0x8f006D1e1D9dC6C98996F50a4c810F17a47fBF19"
+    },
+    {
+      "sym": "PS1",
+      "address": "0x32Cd1BCB75473845b5d1dB6ecE60AEC6E41d8518"
+    },
+    {
+      "sym": "LCD",
+      "address": "0xc2A45FE7d40bCAc8369371B08419DDAFd3131b4a"
+    },
+    {
+      "sym": "BETS",
+      "address": "0x94025780a1aB58868D9B2dBBB775f44b32e8E6e5"
+    },
+    {
+      "sym": "USDD",
+      "address": "0xFFA4D863C96e743A2e1513824EA006B8D0353C57"
+    },
+    {
+      "sym": "TUSD",
+      "address": "0x2e1AD108fF1D8C782fcBbB89AAd783aC49586756"
+    },
+    {
+      "sym": "pMATIC",
+      "address": "0xA0dF47432d9d88bcc040E9ee66dDC7E17A882715"
+    },
+    {
+      "sym": "FRAX",
+      "address": "0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89"
+    },
+    {
+      "sym": "LFI",
+      "address": "0x77D97db5615dFE8a2D16b38EAa3f8f34524a0a74"
+    },
+    {
+      "sym": "RVLT",
+      "address": "0x5d301750cc9719f00872E33Ee81f9C37aBa242F4"
+    },
+    {
+      "sym": "PAXG",
+      "address": "0x553d3D295e0f695B9228246232eDF400ed3560B5"
+    },
+    {
+      "sym": "ALGB",
+      "address": "0x0169eC1f8f639B32Eec6D923e24C2A2ff45B9DD6"
+    },
+    {
+      "sym": "SFL",
+      "address": "0xD1f9c58e33933a993A3891F8acFe05a68E1afC05"
+    },
+    {
+      "sym": "ASTRAFER",
+      "address": "0xDfCe1e99A31C4597a3f8A8945cBfa9037655e335"
+    },
+    {
+      "sym": "MHUNT",
+      "address": "0x61f95bd637e3034133335C1baA0148E518D438ad"
+    },
+    {
+      "sym": "IUX",
+      "address": "0x346404079b3792a6c548B072B9C4DDdFb92948d5"
+    },
+    {
+      "sym": "WLD",
+      "address": "0xA936e1f747d14fC30d08272D065c8aeF4ab7f810"
+    },
+    {
+      "sym": "FYN",
+      "address": "0x3B56a704C01D650147ADE2b8cEE594066b3F9421"
+    },
+    {
+      "sym": "VERSA",
+      "address": "0x8497842420cFdbc97896C2353D75d89Fc8D5Be5D"
+    },
+    {
+      "sym": "LUMIII",
+      "address": "0xED88227296943857409A8e0f15Ad7134e70D0F73"
+    },
+    {
+      "sym": "ankrMATIC",
+      "address": "0x0E9b89007eEE9c958c0EDA24eF70723C2C93dD58"
+    },
+    {
+      "sym": "WOMBAT",
+      "address": "0x0C9c7712C83B3C70e7c5E11100D33D9401BdF9dd"
+    },
+    {
+      "sym": "ROND",
+      "address": "0x204820B6e6FEae805e376D2C6837446186e57981"
+    },
+    {
+      "sym": "MNTL",
+      "address": "0x38A536A31bA4d8C1Bcca016AbBf786ecD25877E8"
+    },
+    {
+      "sym": "FOOD",
+      "address": "0x6F06e6beD64cF4c4187c06Ee2a4732f6a171BC4e"
+    },
+    {
+      "sym": "CATHEON",
+      "address": "0x7e7737C40878e720b32e7bC9CD096259f876d69f"
+    },
+    {
+      "sym": "HOP",
+      "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC"
+    },
+    {
+      "sym": "BOB",
+      "address": "0xB0B195aEFA3650A6908f15CdaC7D92F8a5791B0B"
+    },
+    {
+      "sym": "axlUSDC",
+      "address": "0x750e4C4984a9e0f12978eA6742Bc1c5D248f40ed"
+    },
+    {
+      "sym": "Lunr",
+      "address": "0xBBfE0B60dE96a189BF09079DE86A2Db7bF0C7883"
+    },
+    {
+      "sym": "DOSE",
+      "address": "0x81382e9693dE2aFc33F69B70a6C12CA9B3a73F47"
+    },
+    {
+      "sym": "FOMO",
+      "address": "0x44A6e0BE76e1D9620A7F76588e4509fE4fa8E8C8"
+    },
+    {
+      "sym": "FUD",
+      "address": "0x403E967b044d4Be25170310157cB1A4Bf10bdD0f"
+    },
+    {
+      "sym": "ALPHA",
+      "address": "0x6a3E7C3c6EF65Ee26975b12293cA1AAD7e1dAeD2"
+    },
+    {
+      "sym": "KEK",
+      "address": "0x42E5E06EF5b90Fe15F853F59299Fc96259209c5C"
+    },
+    {
+      "sym": "GLTR",
+      "address": "0x3801C3B3B5c98F88a9c9005966AA96aa440B9Afc"
+    },
+    {
+      "sym": "CP",
+      "address": "0xf9D3d8B25b95BCDA979025B74fDFa7ac3F380f9f"
+    },
+    {
+      "sym": "WISE",
+      "address": "0xB77e62709e39aD1cbeEBE77cF493745AeC0F453a"
+    },
+    {
+      "sym": "dQUICK(NEW)",
+      "address": "0x958d208Cdf087843e9AD98d23823d32E17d723A1"
+    },
+    {
+      "sym": "GOVI",
+      "address": "0x43Df9c0a1156c96cEa98737b511ac89D0e2A1F46"
+    },
+    {
+      "sym": "ALI",
+      "address": "0xbFc70507384047Aa74c29Cdc8c5Cb88D0f7213AC"
+    },
+    {
+      "sym": "ANKR",
+      "address": "0x101A023270368c0D50BFfb62780F4aFd4ea79C35"
+    },
+    {
+      "sym": "VOLT",
+      "address": "0x7f792db54B0e580Cdc755178443f0430Cf799aCa"
+    },
+    {
+      "sym": "MVX",
+      "address": "0x2760E46d9BB43dafCbEcaad1F64b93207f9f0eD7"
+    },
+    {
+      "sym": "GDDY",
+      "address": "0x67eB41A14C0fe5CD701FC9d5A3D6597A72F641a6"
+    },
+    {
+      "sym": "DUSD",
+      "address": "0xEC38621e72D86775a89C7422746de1f52bbA5320"
+    },
+    {
+      "sym": "wstETH",
+      "address": "0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD"
+    },
+    {
+      "sym": "FBX",
+      "address": "0xD125443F38A69d776177c2B9c041f462936F8218"
+    },
+    {
+      "sym": "pBORA",
+      "address": "0x0EF39E52704Ad52E2882BBfA6781167E1b6c4510"
+    },
+    {
+      "sym": "TELEBTC",
+      "address": "0x515D720B9D219f1931205D5B8D842bE1Fe2FeBDE"
+    },
+    {
+      "sym": "MEE",
+      "address": "0xEB7eaB87837f4Dad1bb80856db9E4506Fc441f3D"
+    },
+    {
+      "sym": "rMATIC",
+      "address": "0x9f28e2455f9FFcFac9EBD6084853417362bc5dBb"
+    },
+    {
+      "sym": "AXL",
+      "address": "0x6e4E624106Cb12E168E6533F8ec7c82263358940"
+    },
+    {
+      "sym": "rETH",
+      "address": "0x5736df66b4f8401d639Ffa915a46B4c548C09Ac1"
+    },
+    {
+      "sym": "FIS",
+      "address": "0x7A7B94F18EF6AD056CDa648588181CDA84800f94"
+    },
+    {
+      "sym": "cbETH",
+      "address": "0x4b4327dB1600B8B1440163F667e199CEf35385f5"
+    },
+    {
+      "sym": "axlPEPE",
+      "address": "0x8baE3F5Eb10F39663E57Be19741FD9ccEF0E113a"
+    },
+    {
+      "sym": "BLID",
+      "address": "0x4b27Cd6E6a5E83d236eAD376D256Fe2F9e9f0d2E"
+    },
+    {
+      "sym": "SPEPE",
+      "address": "0xfcA466F2fA8E667a517C9C6cfa99Cf985be5d9B1"
+    },
+    {
+      "sym": "POLX",
+      "address": "0x187Ae45f2D361CbCE37c6A8622119c91148F261b"
+    },
+    {
+      "sym": "WEFI",
+      "address": "0xfFA188493C15DfAf2C206c97D8633377847b6a52"
+    },
+    {
+      "sym": "RISE",
+      "address": "0xC17c30e98541188614dF99239cABD40280810cA3"
+    },
+    {
+      "sym": "eQUAD",
+      "address": "0xDAB625853c2B35D0a9C6bD8e5a097a664ef4CcFb"
+    },
+    {
+      "sym": "T",
+      "address": "0x1D0AB64eD0F1ee4a886462146D26EffC6dd00d0B"
+    },
+    {
+      "sym": "tBTC",
+      "address": "0x236aa50979D5f3De3Bd1Eeb40E81137F22ab794b"
+    },
+    {
+      "sym": "xDG",
+      "address": "0xc6480Da81151B2277761024599E8Db2Ad4C388C8"
+    },
+    {
+      "sym": "PUSH",
+      "address": "0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1"
+    },
+    {
+      "sym": "VEXT",
+      "address": "0x27842334C55c01DDFE81Bf687425F906816c5141"
+    },
+    {
+      "sym": "CONE",
+      "address": "0xbA777aE3a3C91fCD83EF85bfe65410592Bdd0f7c"
+    },
+    {
+      "sym": "USDC",
+      "address": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    },
+    {
+      "sym": "DUCKIES",
+      "address": "0x18e73A5333984549484348A94f4D219f4faB7b81"
+    },
+    {
+      "sym": "END",
+      "address": "0x0C087f8D6A1F14F71bB7Cc7E1B061CA297AF7555"
+    },
+    {
+      "sym": "BOM",
+      "address": "0xc59132FBdF8dE8fbE510F568a5D831C991B4fC38"
+    },
+    {
+      "sym": "METOD",
+      "address": "0x65aD509DB5924Ef0001d977590985f965eF1aaaa"
+    },
+    {
+      "sym": "SLING",
+      "address": "0xfc9Fa9771145fbB98D15C8c2cc94B837a56D554C"
+    },
+    {
+      "sym": "DECATS",
+      "address": "0x198f1D316aad1C0Bfd36a79bd1A8e9dba92DAa18"
+    },
+    {
+      "sym": "ICHI",
+      "address": "0x111111517e4929D3dcbdfa7CCe55d30d4B6BC4d6"
+    }
+  ],
+  "routes": []
+}

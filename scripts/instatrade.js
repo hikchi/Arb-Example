@@ -4,9 +4,7 @@ require("dotenv").config();
 
 let config,arb,owner,inTrade,balances;
 const network = hre.network.name;
-if (network === 'aurora') config = require('./../config/aurora.json');
-if (network === 'fantom') config = require('./../config/fantom.json');
-
+config = require(`./../config/${network}.json`)
 console.log(`Loaded ${config.routes.length} routes`);
 
 const main = async () => {

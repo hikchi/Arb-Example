@@ -15,7 +15,7 @@ module.exports = {
       accounts: [process.env.privateKey],
     },
     polygon: {
-      url: `https://polygon-mainnet.g.alchemy.com/v2/RuZOR5Ozl4oA9_XbQ7m40Fz3OrcqKL13`,
+      url: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.POLYGON_ALCHEMY_API_KEY}`,
       accounts: [process.env.privateKey],
     },
   },
