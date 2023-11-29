@@ -80,6 +80,13 @@ const lookForDualTrade = async () => {
       fs.appendFile(`./data/${network}RouteLog.txt`, `["${targetRoute.router1}","${targetRoute.router2}","${targetRoute.token1}","${targetRoute.token2}"],` + "\n", function (err) { });
     }
     if (amtBack.gt(profitTarget)) {
+      console.log('YES tradable route found', {
+        tradeSize, targetRoute, amtBack,
+        sizeMultiplied,
+        profitTarget,
+        diff: amtBack / profitTarget
+      })
+
       await dualTrade(targetRoute.router1, targetRoute.router2, targetRoute.token1, targetRoute.token2, tradeSize);
     } else {
       // await lookForDualTrade();
@@ -87,6 +94,7 @@ const lookForDualTrade = async () => {
         tradeSize, targetRoute, amtBack,
         sizeMultiplied,
         profitTarget,
+        diff: amtBack / profitTarget
       })
 
     }
@@ -99,7 +107,7 @@ const lookForDualTrade = async () => {
     }
 
     console.error('NO tradable route found', {
-      tradeSize, targetRoute, 
+      tradeSize, targetRoute,
       err: msg
     })
   }
@@ -130,7 +138,12 @@ const lookForTriTrade = async () => {
       fs.appendFile(`./data/${network}RouteLog_Tri.txt`, `["${targetRoute.router1}","${targetRoute.router2}","${targetRoute.router3}", "${targetRoute.token1}","${targetRoute.token2}", "${targetRoute.token3}"],` + "\n", function (err) { });
     }
     if (amtBack.gt(profitTarget)) {
-      console.log('FOUND tradable route', { tradeSize, targetRoute })
+      console.log('YES tri tradable route found', {
+        tradeSize, targetRoute, amtBack,
+        sizeMultiplied,
+        profitTarget,
+        diff: amtBack / profitTarget
+      })
       await triTrade(targetRoute.router1, targetRoute.router2, targetRoute.router3, targetRoute.token1, targetRoute.token2, targetRoute.token3, tradeSize);
     } else {
       // await lookForTriTrade();
@@ -138,6 +151,7 @@ const lookForTriTrade = async () => {
         tradeSize, targetRoute, amtBack,
         sizeMultiplied,
         profitTarget,
+        diff: amtBack / profitTarget
       })
     }
   } catch (e) {
@@ -149,7 +163,7 @@ const lookForTriTrade = async () => {
     }
 
     console.error('NO tradable route found', {
-      tradeSize, targetRoute, 
+      tradeSize, targetRoute,
       err: msg
     })
 
