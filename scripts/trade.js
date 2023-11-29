@@ -21,15 +21,29 @@ const main = async () => {
   //  await new Promise(r => setTimeout(r, i*1000));
   //  await lookForDualTrade();
   //});
-  await lookForDualTrade();
+  while (true) {
+    await lookForDualTrade();
+    await lookForTriTrade();
+  }
+
 }
 
-const searchForRoutes = () => {
+const searchForRoutes = (tri = false) => {
   const targetRoute = {};
-  targetRoute.router1 = config.routers[Math.floor(Math.random() * config.routers.length)].address;
-  targetRoute.router2 = config.routers[Math.floor(Math.random() * config.routers.length)].address;
-  targetRoute.token1 = config.baseAssets[Math.floor(Math.random() * config.baseAssets.length)].address;
-  targetRoute.token2 = config.tokens[Math.floor(Math.random() * config.tokens.length)].address;
+  if (tri) {
+    targetRoute.router1 = config.routers[Math.floor(Math.random() * config.routers.length)].address;
+    targetRoute.router2 = config.routers[Math.floor(Math.random() * config.routers.length)].address;
+    targetRoute.router3 = config.routers[Math.floor(Math.random() * config.routers.length)].address;
+    targetRoute.token1 = config.baseAssets[Math.floor(Math.random() * config.baseAssets.length)].address;
+    targetRoute.token2 = config.tokens[Math.floor(Math.random() * config.tokens.length)].address;
+    targetRoute.token3 = config.tokens[Math.floor(Math.random() * config.tokens.length)].address;
+  } else {
+
+    targetRoute.router1 = config.routers[Math.floor(Math.random() * config.routers.length)].address;
+    targetRoute.router2 = config.routers[Math.floor(Math.random() * config.routers.length)].address;
+    targetRoute.token1 = config.baseAssets[Math.floor(Math.random() * config.baseAssets.length)].address;
+    targetRoute.token2 = config.tokens[Math.floor(Math.random() * config.tokens.length)].address;
+  }
   return targetRoute;
 }
 
@@ -47,43 +61,107 @@ const useGoodRoutes = () => {
 }
 
 const lookForDualTrade = async () => {
+  console.log('==================LOOK FOR DUAL TRADE===================')
   let targetRoute;
   if (config.routes.length > 0) {
     targetRoute = useGoodRoutes();
   } else {
     targetRoute = searchForRoutes();
   }
+  let tradeSize = balances[targetRoute.token1].balance.div(DEFAULT_DIV_SIZE);
   try {
-    let tradeSize = balances[targetRoute.token1].balance.div(DEFAULT_DIV_SIZE);
-    console.log('stare calling at', new Date(), { tradeSize, targetRoute });
     const amtBack = await arb.estimateDualDexTrade(targetRoute.router1, targetRoute.router2, targetRoute.token1, targetRoute.token2, tradeSize);
     const multiplier = hre.ethers.BigNumber.from(config.minBasisPointsPerTrade + 10000);
     const sizeMultiplied = tradeSize.mul(multiplier);
     const divider = hre.ethers.BigNumber.from(10000);
     const profitTarget = sizeMultiplied.div(divider);
-    console.log({
-      amtBack,
-      sizeMultiplied,
-      profitTarget,
-    })
+
     if (!config.routes.length > 0) {
       fs.appendFile(`./data/${network}RouteLog.txt`, `["${targetRoute.router1}","${targetRoute.router2}","${targetRoute.token1}","${targetRoute.token2}"],` + "\n", function (err) { });
     }
     if (amtBack.gt(profitTarget)) {
-      console.log("YAY")
       await dualTrade(targetRoute.router1, targetRoute.router2, targetRoute.token1, targetRoute.token2, tradeSize);
     } else {
-      await lookForDualTrade();
+      // await lookForDualTrade();
+      console.log('NO tradable route found', {
+        tradeSize, targetRoute, amtBack,
+        sizeMultiplied,
+        profitTarget,
+      })
+
     }
   } catch (e) {
-    console.log(e);
+    let msg = ""
+    if (e.message.includes("missing revert data in call exception")) {
+      msg = "reverted"
+    } else {
+      msg = e.message
+    }
+
+    console.error('NO tradable route found', {
+      tradeSize, targetRoute, 
+      err: msg
+    })
   }
-  await lookForDualTrade();
+  // await lookForDualTrade();
+
+  console.log(`payload: ("${targetRoute.router1}", "${targetRoute.router2}", "${targetRoute.token1}", "${targetRoute.token2}", "${tradeSize}")`)
+
+}
+
+const lookForTriTrade = async () => {
+  console.log('==================LOOK FOR TRI TRADE===================')
+  let targetRoute;
+  if (config.routes.length > 0) {
+    targetRoute = useGoodRoutes();
+  } else {
+    targetRoute = searchForRoutes(true);
+  }
+  let tradeSize = balances[targetRoute.token1].balance.div(DEFAULT_DIV_SIZE);
+  try {
+    // console.log(`("${targetRoute.router1}", "${targetRoute.router2}", "${targetRoute.router3}", "${targetRoute.token1}", "${targetRoute.token2}", "${targetRoute.token3}", "${tradeSize}")`)
+    const amtBack = await arb.estimateTriDexTrade(targetRoute.router1, targetRoute.router2, targetRoute.router3, targetRoute.token1, targetRoute.token2, targetRoute.token3, tradeSize);
+    const multiplier = hre.ethers.BigNumber.from(config.minBasisPointsPerTrade + 10000);
+    const sizeMultiplied = tradeSize.mul(multiplier);
+    const divider = hre.ethers.BigNumber.from(10000);
+    const profitTarget = sizeMultiplied.div(divider);
+
+    if (!config.routes.length > 0) {
+      fs.appendFile(`./data/${network}RouteLog_Tri.txt`, `["${targetRoute.router1}","${targetRoute.router2}","${targetRoute.router3}", "${targetRoute.token1}","${targetRoute.token2}", "${targetRoute.token3}"],` + "\n", function (err) { });
+    }
+    if (amtBack.gt(profitTarget)) {
+      console.log('FOUND tradable route', { tradeSize, targetRoute })
+      await triTrade(targetRoute.router1, targetRoute.router2, targetRoute.router3, targetRoute.token1, targetRoute.token2, targetRoute.token3, tradeSize);
+    } else {
+      // await lookForTriTrade();
+      console.log('NO tri tradable route found', {
+        tradeSize, targetRoute, amtBack,
+        sizeMultiplied,
+        profitTarget,
+      })
+    }
+  } catch (e) {
+    let msg = ""
+    if (e.message.includes("missing revert data in call exception")) {
+      msg = "reverted"
+    } else {
+      msg = e.message
+    }
+
+    console.error('NO tradable route found', {
+      tradeSize, targetRoute, 
+      err: msg
+    })
+
+  }
+  // await lookForTriTrade();
+  console.log(`payload: ("${targetRoute.router1}", "${targetRoute.router2}", "${targetRoute.router3}", "${targetRoute.token1}", "${targetRoute.token2}", "${targetRoute.token3}", "${tradeSize}")`)
+
 }
 
 const dualTrade = async (router1, router2, baseToken, token2, amount) => {
   if (inTrade === true) {
-    await lookForDualTrade();
+    // await lookForDualTrade();
     return false;
   }
   try {
@@ -92,11 +170,34 @@ const dualTrade = async (router1, router2, baseToken, token2, amount) => {
     const tx = await arb.connect(owner).dualDexTrade(router1, router2, baseToken, token2, amount); //{ gasPrice: 1000000000003, gasLimit: 500000 }
     await tx.wait();
     inTrade = false;
-    await lookForDualTrade();
+    // await lookForDualTrade();
+    return true
   } catch (e) {
     console.log(e);
     inTrade = false;
-    await lookForDualTrade();
+    // await lookForDualTrade();
+    return false
+  }
+}
+
+const triTrade = async (router1, router2, router3, baseToken, token2, token3, amount) => {
+  if (inTrade === true) {
+    // await lookForTriTrade();
+    return false;
+  }
+  try {
+    inTrade = true;
+    console.log('> Making triTrade...');
+    const tx = await arb.connect(owner).triDexTrade(router1, router2, router3, baseToken, token2, token3, amount); //{ gasPrice: 1000000000003, gasLimit: 500000 }
+    await tx.wait();
+    inTrade = false;
+    // await lookForTriTrade();
+    return true
+  } catch (e) {
+    console.log(e);
+    inTrade = false;
+    // await lookForTriTrade();
+    return false
   }
 }
 

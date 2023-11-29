@@ -1,5 +1,6 @@
 {
-  "arbContract": "0xfa2c879Fd4BDd27Afe7be211e9912674914AB949",
+  "arbContract": "0xf038d7e9F7545efFcd7C0320588f87086427249f",
+  "instaArbContract": "0xb81b644f14a12dcacfe4fc01f43bccc2faaf8170",
   "minBasisPointsPerTrade": 50,
   "routers": [
     { "dex": "quickswap", "address": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff" }, 
